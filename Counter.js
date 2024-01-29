@@ -10,8 +10,7 @@ class Counter {
     }
 
     Ticks(){
-        return this._count;
-        //return (this._count).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
+        return (this._count).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
     }   //formats to two digits. ie. 6 = '06'
 
     Increment() {

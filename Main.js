@@ -1,15 +1,16 @@
-const parentBody = document.getElementById("body");
+const parentBody = document.getElementById("visClock");
 createText();
 let myClock = new Clock();
-let tickTest = 0;
 const clkTxt = document.getElementById('clockText');
+const resetButton = document.getElementById('rButton');
+console.log(resetButton);
+
 
 intervalSec = setInterval(Update, 1000);
 function Update(){
     //console.log(myClock.TimeOutput());
     myClock.Tick();
-    ++tickTest;
-    clkTxt.innerText = `${myClock.TimeOutput()} ${tickTest}`;
+    clkTxt.innerText = `${myClock.TimeOutput()}`;
 }
 function createText(){
     let para = document.createElement('p');
@@ -18,4 +19,10 @@ function createText(){
     para.setAttribute("id", "clockText");
 
     parentBody.appendChild(para);
+}
+
+resetButton.addEventListener("click", buttonRst);
+function buttonRst(){
+    myClock.Reset();
+    clkTxt.innerText = `${myClock.TimeOutput()}`;
 }
