@@ -3,7 +3,6 @@ createText();
 let myClock = new Clock();
 const clkTxt = document.getElementById('clockText');
 const resetButton = document.getElementById('rButton');
-console.log(resetButton);
 
 
 intervalSec = setInterval(Update, 1000);
